@@ -1,0 +1,25 @@
+.tabla{
+    display: grid;
+    grid-template-columns: 1.5fr, 1fr, 2fr, 1fr;
+    grid-template-rows: 1.5fr, 1fr, 2fr, 1fr;
+    gap: 10px;
+    padding: 10px;
+
+
+}
+p{
+    border: 1px solid;
+    padding: 20px;
+    text-align: center;
+}
+.p5{
+    grid-row: span 2;
+}
+
+.p7{
+    grid-row: span 2;
+}
+
+.p11{
+    grid-row: span 2;
+}
