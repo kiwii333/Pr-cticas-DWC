@@ -20,4 +20,4 @@ function sumar(nums){
     return numeros[0] + sumar(nums.slice(1));
 }
 
-console.log('Suma recursiva: ${sumar(nums)}');
+console.log(`Suma recursiva: ${sumar(nums)}`);
