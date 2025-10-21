@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="botón">Nuevo número</button>
+    <ul id="lista">Lista elementos:
+
+    </ul>
+    <script>
+        let botón = document.getElementById('botón');
+        let elemento = 0;
+        function añadir(elemento){
+            var li = document.createElement('li');
+            elemento.textContent(elemento)
+            document.getElementById('lista').appendChild(li);
+        }
+        botón.addEventListener('click', añadir(elemento = (Math.random()*100)+1));
+
+    </script>
+</body>
+</html>
