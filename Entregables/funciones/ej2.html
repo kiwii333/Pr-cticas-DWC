@@ -6,6 +6,36 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="/ej2.js"></script>
+    <script>
+        var palabra;
+        let palabras  = [];
+        let cont0 = 0;
+        let cont1 = 1;
+        let cont2 = 2;
+
+        
+        
+        do{
+            palabra = prompt("Introduce una palabra: ");
+            if(palabra){
+                palabras.add(palabra);
+            }if(palabra === palabras[0]){
+                cont0++;
+            }if(palabra === palabras[1]){
+                cont1++;
+            }if(palabra === palabras[2]){
+                cont2++;
+            }
+                
+        }while(palabra)
+
+        function conteo(palabras){
+            palabrasMap = newMap();
+            palabras.set(cont0,palabra).set(cont1,palabra).set(cont2,palabra);
+            alert(palabrasMap);
+        }
+
+        conteo(palabras);
+    </script>
 </body>
 </html>

@@ -7,7 +7,30 @@
     
 </head>
 <body>
-    <p class="ej1">Ej1</p>
-    <script src="/home/raupercor5/Escriptori/Prácticas_DWC/Entregables/funciones/ej1.js">ej1.js</script>
+    <p id="ej1"></p>
+    
+    
+    <script> 
+        var palabra;
+        let palabras  = new Set();
+        function pregunta(){
+            do{
+                palabra = prompt("Introduce una palabra: ");
+                if(palabra){
+                    palabras.add(palabra);
+                }
+                
+            }while(palabra)
+
+            const array=[...palabras];
+            array.reverse();
+
+            return array;
+
+            document.getElementById("ej1").textContent = 'Palabras en inverso' + array.join(",");
+        }
+
+        pregunta();
+    </script>
 </body>
 </html>
