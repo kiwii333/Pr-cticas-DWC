@@ -1,14 +1,14 @@
 function primeraTarea(){
-    return new Promise ((saludar) =>{
+    return new Promise ((devolver) =>{
         let n = 10;
-        saludar(n)
+        devolver(n)
         
     })
 }
 
 function segundaTarea(){
     return new Promise ((multiplicar)=>{
-        mult = n * 2
+        let mult = n * 2
         multiplicar(mult)
         
     })
@@ -21,14 +21,14 @@ function terceraTarea(){
 }
 
 primeraTarea()
-    .then((saludar) =>{
-        console.log(saludar)
+    .then((devolver) =>{
+        console.log(devolver)
     })
-segundaTarea()
+
     .then((multiplicar)=>{
         console.log(multiplicar)
     })
-terceraTarea()    
+   
     .then((sumar)=>{
         console.log(sumar)
     })
