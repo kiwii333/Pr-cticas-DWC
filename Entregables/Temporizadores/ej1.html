@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" id="nombre">
+        <label for="guardar">Guardar</label>
+        <input type="submit" id="guardar">
+    </form>
+    <script>
+        function guardar(evento){
+            if(evento.type == "click"){
+                localStorage.setItem('nombre',document.getElementById("nombre"));
+                localStorage.getItem('nombre');
+                document.location.reload();
+                
+            } 
+        }
+
+        
+
+        document.getElementById("guardar").onclick = guardar;
+    </script>
+</body>
+</html>
