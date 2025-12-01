@@ -1,13 +1,18 @@
 const producto = document.getElementById('div')
-const id = document.getElementById('id')
+const input = document.getElementById('id')
 const body = document.getElementById('body')
+
+
 
 function click (evento){
     if(evento.type == 'click'){
-        fetch(`https://dummyjson.com/products/${id.value}`)
+        fetch(`https://dummyjson.com/products/${input.value}`)
         .then((response)=>{
             if(!response.ok){
-                throw new Error (`Error 404`)
+                let error = document.createElement('p')
+                error.textContent = `Error${response.status}`
+                body.appendChild(error)
+                
             }
         return response.json();
         })
@@ -17,7 +22,40 @@ function click (evento){
             datos.textContent = `id:${data.id}      , titulo:${data.title},       precio:${data.price}`
             body.appendChild(datos)
             
+        
+            return (fetch(`https://dummyjson.com/products/${input.value}`),{
+                method:'POST',
+                body:JSON.stringify({
+                    id: data.id,
+                    title: data.title,
+                    precio: data.price
+                })
+            })
+            
+        
+        
         })
+
+        .then(response=>{
+            return response
+        })
+            
+        .then(data=>{
+            console.log(data)
+            let datos_post = document.createElement('p');
+            datos_post.textContent = `Titulo ${data.title}`
+            body.appendChild(datos_post)
+        });
+
+     /*    .then(post=>{
+            let post = document.createElement('p')
+            post.textContent = 'POST'
+            body.appendChild(post)
+        }) */
+
+        
+
+        
         
     }   
 }
@@ -25,15 +63,4 @@ function click (evento){
 document.getElementById('button').onclick = click;
 
 
-fetch('https://httpbin.org/post'),{
-    method:'POST',
-        body:JSON.stringify(data.id,data.title,data.price)
-}
-.then(response=>{
-    return response
-})
-.then(data=>{
-    let datos_post = document.createElement('p');
-    datos_post.textContent = `Titulo ${data.title}`
-    body.appendChild(datos_post)
-});
+
